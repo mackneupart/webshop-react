@@ -1,0 +1,42 @@
+/* Main product image*/ 
+.product-image {
+    margin-left: 60px;
+    width: 60%;
+}
+
+.active {
+    color: black;
+}
+
+.breadcrumb-item {
+    margin: 0 0.1rem;
+}
+
+.breadcrumbs {
+    display: flex;
+    vertical-align: auto;
+    padding: 0.5rem 0.5rem 0.5rem 0;
+    list-style: none;
+    margin: 0;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+a:hover {
+    color: darkgray;
+}
+
+
+.second-box {
+    display: flex;
+}
+
+.OneBuyButton {
+    text-align: center;
+    margin-top: 5px;
+    align-self: center;
+}

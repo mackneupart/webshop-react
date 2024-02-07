@@ -1,0 +1,170 @@
+/* Typografi */
+h1 {
+    color: #000;
+    font-family: 'Kanit', sans-serif;
+    font-size: 54px;
+    font-weight: 400;
+}
+
+
+h2 {
+    color: #000;
+    font-family: 'Kanit', sans-serif;
+    font-size: 48px;
+    font-weight: 400;
+}
+
+h3 {
+    color: #000;
+    font-family: 'Kanit', sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+}
+
+h4 {
+    color: #000;
+    font-family: 'Kanit', sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+}
+
+h5 {
+    color: #000;
+    font-family: 'Kanit', sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+h6 {
+    color: #ED5A00;
+    font-family: 'Mynerve', cursive !important;
+    font-style: oblique;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+p {
+    color: #000;
+    font-family: 'Kanit', sans-serif;
+    font-size: 16px;
+    font-weight: 200;
+}
+
+a {
+    color: #ED5A00;
+    font-family: 'Kanit', sans-serif;
+    font-size: 16px;
+    font-weight: 200;
+}
+
+a:hover {
+    color: #f4965be0;
+}
+
+/* View to 100 */
+.content {
+    min-height: calc(100vh - 50px);
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+/* Navigation bar*/
+.navbar-brand {
+    font-family: 'Mynerve', cursive;
+    font-style: oblique;
+    font-size: 24px;
+}
+
+.navbar{
+    background-color: #F2BD2C;
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.2);
+}
+
+.nav-link {
+    color: #000;
+    border-radius: 30px;
+    padding: 12px !important;
+
+}
+
+.nav-link:hover{
+    background-color: #F7D778;
+    color: #000;
+    border-radius: 30px;
+    font-weight: 500;
+    padding: 12px !important;
+}
+
+.customnavbar-name{
+    color: #ED5A00 !important;
+    font-family: 'Mynerve', cursive;
+    font-size: 19px;
+}
+
+/* Footer */
+
+.footer {
+    background-color: #E8EDDF;
+    height: 50px;
+    margin-top: auto;
+  }
+
+.log-in-basket{
+    display: flex;
+    justify-content: flex-end;
+}
+.logo-img{
+    width: 35px;
+    height: auto;
+}
+
+.basket-img{
+    width: 40px;
+    height: auto;
+}
+
+/* Buttons styling */
+.custom-inline{
+    display: inline-grid;
+}
+
+.YellowButton{
+    background-color: #F2BD2C;
+    color: #000;
+    border-radius: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+
+}
+
+.YellowButton:hover {
+    background-color: #F7D778;
+    color: #000;
+}
+
+.BlackButton{
+    background-color: #333533;
+    color: #ffffff;
+    border-radius: 30px !important;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.BlackButton:hover {
+    background-color: #F7D778;
+    color: #333533;
+}
+
+/*General styling*/
+
+.logout-btn{
+    margin-right: 5px;
+    display: none;
+}
+
+.carousel-inner .active {
+    align-self: center;
+}

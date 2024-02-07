@@ -1,0 +1,30 @@
+/* Form in the main body */
+.login-section {
+    max-width: 430px;
+    margin: auto;
+    background-color: #F2BD2C;
+    padding: 40px;
+    box-sizing: border-box;
+    border-radius: 25px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+/* Button on the form */
+.form-btn {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.BlackButton{
+    margin-top: 3%;
+}
+
+
+/*Textfields in the form*/
+.form-floating {
+    width: auto;
+    margin-top: 3%;
+    border-radius: 50px !important;
+}
