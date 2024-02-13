@@ -33,7 +33,7 @@ export default function OneProductSection({
   async function buyProduct() {
     for (let i = 0; i < itemCount; i++) {
       await fetch(
-        `http://localhost:3000/baskets/${customer.customerId}/${routeProdId}`,
+        `https://webshop-rest-api-main-production.up.railway.app/baskets/${customer.customerId}/${routeProdId}`,
         {
           mode: "cors",
           method: "PUT",
@@ -43,7 +43,7 @@ export default function OneProductSection({
     //updates the productCounter in navbar
     async function getBasketCount() {
       const response = await fetch(
-        `http://localhost:3000/baskets/${customer.customerId}`,
+        `https://webshop-rest-api-main-production.up.railway.app/baskets/${customer.customerId}`,
         {
           mode: "cors",
           method: "GET",

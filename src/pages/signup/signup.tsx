@@ -12,12 +12,14 @@ export default function Signup() {
     password: string;
   }
 
-  const [CustomerValues, setCustomerValues] = useState<CustomerValuesInterface>({
-    firstName: "",
-    lastName: "",
-    email: "",
-    password: "",
-  });
+  const [CustomerValues, setCustomerValues] = useState<CustomerValuesInterface>(
+    {
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: "",
+    }
+  );
 
   const navigate = useNavigate();
 
@@ -29,14 +31,17 @@ export default function Signup() {
   //Post a customer to the database
   const postCustomer = async (customer: string) => {
     try {
-      const response = await fetch("http://localhost:3000/customers", {
-        mode: "cors",
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: customer,
-      });
+      const response = await fetch(
+        "https://webshop-rest-api-main-production.up.railway.app/customers",
+        {
+          mode: "cors",
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: customer,
+        }
+      );
 
       if (!response.ok) {
         alert("You have not been signed up. Please try again later");
@@ -64,10 +69,12 @@ export default function Signup() {
     const password = formData.get("password") as string;
     const email = formData.get("email") as string;
 
-   //Regular expressions for validation
+    //Regular expressions for validation
     const regEmail: RegExp = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
-    const regName: RegExp = /^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,20}$/;
-    const regPassword: RegExp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
+    const regName: RegExp =
+      /^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,20}$/;
+    const regPassword: RegExp =
+      /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
     //validation of input fields with regex
     if (!regName.test(firstName)) {
       alert("Please enter a valid first name");
@@ -82,7 +89,9 @@ export default function Signup() {
       return;
     }
     if (!regPassword.test(password)) {
-      alert("Please enter a valid password. Your password must contain at least 1 capital letter, 1 number and the length of 8 characters");
+      alert(
+        "Please enter a valid password. Your password must contain at least 1 capital letter, 1 number and the length of 8 characters"
+      );
       return;
     }
     // Valid form date, which creates a customer object

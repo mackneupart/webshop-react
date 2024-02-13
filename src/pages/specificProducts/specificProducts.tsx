@@ -17,13 +17,17 @@ export default function SpecificProducts(props: any) {
     window.scrollTo(0, 0);
   }, []);
 
-  useEffect(() => {
-    fetch(`http://localhost:3000/categories/overcategories/${ocId}/${subcId}`)
-      .then((response) => response.json())
-      .then((data) => setSpecificProducts(data));
-  }, 
-  // "specificProducts" is getting the missing dependencies: 'ocId' and 'subcId' from the dropdown navigation
-  [specificProducts]);
+  useEffect(
+    () => {
+      fetch(
+        `https://webshop-rest-api-main-production.up.railway.app/categories/overcategories/${ocId}/${subcId}`
+      )
+        .then((response) => response.json())
+        .then((data) => setSpecificProducts(data));
+    },
+    // "specificProducts" is getting the missing dependencies: 'ocId' and 'subcId' from the dropdown navigation
+    [specificProducts]
+  );
 
   return (
     <Fragment>

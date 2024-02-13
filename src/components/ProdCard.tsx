@@ -25,7 +25,7 @@ export default function ProdCard({
 
   async function buyProduct() {
     await fetch(
-      `http://localhost:3000/baskets/${customer.customerId}/${prodId}`,
+      `https://webshop-rest-api-main-production.up.railway.app/baskets/${customer.customerId}/${prodId}`,
       {
         mode: "cors",
         method: "PUT",
@@ -35,7 +35,7 @@ export default function ProdCard({
   }
   async function getBasketCount() {
     const response = await fetch(
-      `http://localhost:3000/baskets/${customer.customerId}`,
+      `https://webshop-rest-api-main-production.up.railway.app/baskets/${customer.customerId}`,
       {
         mode: "cors",
         method: "GET",
@@ -49,7 +49,11 @@ export default function ProdCard({
   return (
     <Fragment>
       <div className="card" id={prodId}>
-        <img className="product-card-img" src={prodImg} alt={prodName + " image"} />
+        <img
+          className="product-card-img"
+          src={prodImg}
+          alt={prodName + " image"}
+        />
         <div className="card-body">
           <div className="text-center">
             <h5 className="fw-bolder" id="productName">
@@ -61,7 +65,7 @@ export default function ProdCard({
           </div>
         </div>
         <div className="card-footer p-4 pt-0 border-top-0 bg-transparent align-self-center">
-        <div className="text-center custom-inline">
+          <div className="text-center custom-inline">
             <button
               id="AddProduct"
               className="btn YellowButton"

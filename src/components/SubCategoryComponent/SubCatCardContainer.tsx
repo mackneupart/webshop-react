@@ -12,7 +12,9 @@ export default function SubCatCardContainer({
   const [subCategories, setSubCategories] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/categories/overcategories/${ocId}`)
+    fetch(
+      `https://webshop-rest-api-main-production.up.railway.app/categories/overcategories/${ocId}`
+    )
       .then((response) => response.json())
       .then((data) => {
         const { subCategories: receivedSubCategories, overCategoryName } = data;

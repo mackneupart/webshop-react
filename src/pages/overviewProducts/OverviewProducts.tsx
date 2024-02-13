@@ -23,7 +23,7 @@ export default function OverviewProducts(props: any) {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:3000/products")
+    fetch("https://webshop-rest-api-main-production.up.railway.app/products")
       .then((response) => response.json())
       .then((data) => setProducts(data));
   }, []);

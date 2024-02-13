@@ -42,7 +42,7 @@ export default function BasketItemContainer({
   //Helper function to update the count in Navbar
   async function getBasketCount() {
     const response = await fetch(
-      `http://localhost:3000/baskets/${customer.customerId}`,
+      `https://webshop-rest-api-main-production.up.railway.app/baskets/${customer.customerId}`,
       {
         mode: "cors",
         method: "GET",
@@ -56,7 +56,7 @@ export default function BasketItemContainer({
   //puts a product in the basket, and increment itemCount
   async function buyProduct(prodId: number) {
     await fetch(
-      `http://localhost:3000/baskets/${customer.customerId}/${prodId}`,
+      `https://webshop-rest-api-main-production.up.railway.app/baskets/${customer.customerId}/${prodId}`,
       {
         mode: "cors",
         method: "PUT",
@@ -68,7 +68,7 @@ export default function BasketItemContainer({
   //removes a product from basket, and decrement itemCount
   async function removeProduct(prodId: number) {
     await fetch(
-      `http://localhost:3000/baskets/${customer.customerId}/${prodId}`,
+      `https://webshop-rest-api-main-production.up.railway.app/baskets/${customer.customerId}/${prodId}`,
       {
         mode: "cors",
         method: "DELETE",
@@ -90,7 +90,7 @@ export default function BasketItemContainer({
     if (itemCount > 0) {
       try {
         // deletes the data for the Guest account
-        await fetch(`http://localhost:3000/baskets/${customer.customerId}`, {
+        await fetch(`https://webshop-rest-api-main-production.up.railway.app/baskets/${customer.customerId}`, {
           method: "DELETE",
         });
       } catch (error) {
@@ -119,7 +119,7 @@ export default function BasketItemContainer({
 
   //fetches the products from API
   useEffect(() => {
-    fetch(`http://localhost:3000/baskets/${customer.customerId}`)
+    fetch(`https://webshop-rest-api-main-production.up.railway.app/baskets/${customer.customerId}`)
       .then((response) => response.json())
       .then((data) => setProducts(data));
   }, [itemCount]);

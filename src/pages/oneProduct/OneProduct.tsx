@@ -27,7 +27,9 @@ export default function OneProduct(props: any) {
   }, []);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/products/${routeProdId}`)
+    fetch(
+      `https://webshop-rest-api-main-production.up.railway.app/products/${routeProdId}`
+    )
       .then((response) => response.json())
       .then((data) => setProducts(data));
   }, []);

@@ -18,10 +18,13 @@ export default function LoginForm() {
   const { updateCustomer } = context;
   useEffect(() => {
     async function fetchCustomers() {
-      const response = await fetch("http://localhost:3000/customers", {
-        mode: "cors",
-        method: "GET",
-      });
+      const response = await fetch(
+        "https://webshop-rest-api-main-production.up.railway.app/customers",
+        {
+          mode: "cors",
+          method: "GET",
+        }
+      );
       const data = await response.json();
       setCustomers(data);
     }

@@ -29,9 +29,9 @@ export interface CustomerContextInterface {
   updateCustomer: (customer: Customer) => void;
 }
 
-export const CustomerContext = createContext<CustomerContextInterface | undefined>(
-  undefined
-);
+export const CustomerContext = createContext<
+  CustomerContextInterface | undefined
+>(undefined);
 
 export default function App() {
   const [customer, setCustomer] = useState<Customer>({
@@ -51,7 +51,9 @@ export default function App() {
   async function postCustomer() {
     // Try to get guest from database
     try {
-      const response = await fetch(`http://localhost:3000/customers/guest`);
+      const response = await fetch(
+        `https://webshop-rest-api-main-production.up.railway.app/customers/guest`
+      );
       const data = await response.json();
       setCustomer(data);
     } catch (error) {
@@ -62,9 +64,12 @@ export default function App() {
   const deleteGuestBasket = async () => {
     try {
       // deletes the data for the Guest account
-      await fetch(`http://localhost:3000/baskets/5`, {
-        method: "DELETE",
-      });
+      await fetch(
+        `https://webshop-rest-api-main-production.up.railway.app/baskets/5`,
+        {
+          method: "DELETE",
+        }
+      );
     } catch (error) {
       console.error("Error deleting basket data:", error);
     }
@@ -83,15 +88,41 @@ export default function App() {
     <BrowserRouter>
       <CustomerContext.Provider value={{ customer, updateCustomer }}>
         <Routes>
-          <Route path="/" element={<Navbar productCount={productCount} updateProductCount={updateProductCount}/>}>
+          <Route
+            path="/"
+            element={
+              <Navbar
+                productCount={productCount}
+                updateProductCount={updateProductCount}
+              />
+            }>
             <Route index element={<Home />} />
-            <Route path="All-Products" element={<OverviewProducts updateProductCount={updateProductCount} />}/>
+            <Route
+              path="All-Products"
+              element={
+                <OverviewProducts updateProductCount={updateProductCount} />
+              }
+            />
             <Route path="Categories" element={<OverviewCategory />} />
-            <Route path="Categories/:overCategoryName" element={<SubCategory />}/>
-            <Route path="Categories/:overCategoryName/:subCategoryName" element={<SpecificProducts updateProductCount={updateProductCount} />}/>
+            <Route
+              path="Categories/:overCategoryName"
+              element={<SubCategory />}
+            />
+            <Route
+              path="Categories/:overCategoryName/:subCategoryName"
+              element={
+                <SpecificProducts updateProductCount={updateProductCount} />
+              }
+            />
             <Route path="Login" element={<Login />} />
-            <Route path="Basket" element={<Basket updateProductCount={updateProductCount} />}/>
-            <Route path="Product/:prodId" element={<OneProduct updateProductCount={updateProductCount} />}/>
+            <Route
+              path="Basket"
+              element={<Basket updateProductCount={updateProductCount} />}
+            />
+            <Route
+              path="Product/:prodId"
+              element={<OneProduct updateProductCount={updateProductCount} />}
+            />
             <Route path="*" element={<NoPage />} />
             <Route path="signup" element={<Signup />} />
             <Route path="About" element={<AboutPage />} />

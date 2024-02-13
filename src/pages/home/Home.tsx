@@ -19,7 +19,9 @@ export default function Home() {
     window.scrollTo(0, 0);
   }, []);
   useEffect(() => {
-    fetch("http://localhost:3000/products/carrousel")
+    fetch(
+      "https://webshop-rest-api-main-production.up.railway.app/products/carrousel"
+    )
       .then((response) => response.json())
       .then((data) => setProducts(data));
   }, []);

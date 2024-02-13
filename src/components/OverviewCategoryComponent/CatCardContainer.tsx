@@ -10,7 +10,7 @@ export default function CatCardContainer({ heading }: CatCardContainerProps) {
     // Fetch API data for overcategories
     const [overviewCategories, setoverviewCategories] = useState([]);
     useEffect(() => {
-      fetch("http://localhost:3000/categories/overcategories")
+      fetch("https://webshop-rest-api-main-production.up.railway.app/categories/overcategories")
         .then((response) => response.json())
         .then((data) => setoverviewCategories(data));
     }, []);
