@@ -1,7 +1,7 @@
 /* Typografi */
 h1 {
     color: #000;
-    font-family: 'Kanit', sans-serif;
+    font-family: Helvetica, sans-serif;
     font-size: 54px;
     font-weight: 400;
 }
@@ -9,28 +9,28 @@ h1 {
 
 h2 {
     color: #000;
-    font-family: 'Kanit', sans-serif;
+    font-family: Helvetica, sans-serif;
     font-size: 48px;
     font-weight: 400;
 }
 
 h3 {
     color: #000;
-    font-family: 'Kanit', sans-serif;
+    font-family: Helvetica, sans-serif;
     font-size: 40px;
     font-weight: 400;
 }
 
 h4 {
     color: #000;
-    font-family: 'Kanit', sans-serif;
+    font-family: Helvetica, sans-serif;
     font-size: 36px;
     font-weight: 400;
 }
 
 h5 {
     color: #000;
-    font-family: 'Kanit', sans-serif;
+    font-family: Helvetica, sans-serif;
     font-size: 30px;
     font-weight: 400;
 }
@@ -45,21 +45,21 @@ h6 {
 
 p {
     color: #000;
-    font-family: 'Kanit', sans-serif;
+    font-family: Helvetica, sans-serif;
     font-size: 16px;
     font-weight: 200;
 }
 
 a {
     color: #ED5A00;
-    font-family: 'Kanit', sans-serif;
+    font-family: Helvetica, sans-serif;
     font-size: 16px;
     font-weight: 200;
 }
 
-a:hover {
+/* a:hover {
     color: #f4965be0;
-}
+} */
 
 /* View to 100 */
 .content {
@@ -77,24 +77,19 @@ a:hover {
 }
 
 .navbar{
-    background-color: #F2BD2C;
+    background-color: whitesmoke;
     box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.2);
+    border: solid black 1px;
 }
 
 .nav-link {
     color: #000;
-    border-radius: 30px;
+    border-radius: 10px;
     padding: 12px !important;
 
 }
 
-.nav-link:hover{
-    background-color: #F7D778;
-    color: #000;
-    border-radius: 30px;
-    font-weight: 500;
-    padding: 12px !important;
-}
+
 
 .customnavbar-name{
     color: #ED5A00 !important;
@@ -120,8 +115,15 @@ a:hover {
 }
 
 .basket-img{
+    display: flex;
+    justify-self: flex-end;
+    background-color: white;
+    padding: 8px;
+    border-radius: 100px;
     width: 40px;
-    height: auto;
+}
+.basket-img:hover{
+    border: solid grey 1px;
 }
 
 /* Buttons styling */
@@ -129,34 +131,38 @@ a:hover {
     display: inline-grid;
 }
 
+.buy-btn{
+    background-color: green;
+    color: white;
+}
+
+.buy-btn:hover{
+    background-color: green;
+
+}
+
 .YellowButton{
     background-color: #F2BD2C;
     color: #000;
-    border-radius: 30px;
+    border-radius: 10px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 16px;
     font-weight: 400;
 
 }
 
-.YellowButton:hover {
+/* .YellowButton:hover {
     background-color: #F7D778;
     color: #000;
-}
+} */
 
 .BlackButton{
-    background-color: #333533;
-    color: #ffffff;
-    border-radius: 30px !important;
+    border-radius: 10px !important;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 16px;
     font-weight: 400;
 }
 
-.BlackButton:hover {
-    background-color: #F7D778;
-    color: #333533;
-}
 
 /*General styling*/
 

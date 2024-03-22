@@ -37,7 +37,7 @@ export default function BasketItemContainer({
   useEffect(() => {
     setTotalAmount(sumPrices());
     getBasketCount();
-  },[sumPrices, getBasketCount]);
+  }, [sumPrices, getBasketCount]);
 
   //Helper function to update the count in Navbar
   async function getBasketCount() {
@@ -76,7 +76,7 @@ export default function BasketItemContainer({
     );
     getBasketCount();
   }
-  
+
   //Sums up all the productPrices
   function sumPrices(): number {
     const total = products.reduce(
@@ -90,9 +90,12 @@ export default function BasketItemContainer({
     if (itemCount > 0) {
       try {
         // deletes the data for the Guest account
-        await fetch(`https://webshop-rest-api-main-production.up.railway.app/baskets/${customer.customerId}`, {
-          method: "DELETE",
-        });
+        await fetch(
+          `https://webshop-rest-api-main-production.up.railway.app/baskets/${customer.customerId}`,
+          {
+            method: "DELETE",
+          }
+        );
       } catch (error) {
         console.error("Error deleting basket data:", error);
       }
@@ -119,7 +122,9 @@ export default function BasketItemContainer({
 
   //fetches the products from API
   useEffect(() => {
-    fetch(`https://webshop-rest-api-main-production.up.railway.app/baskets/${customer.customerId}`)
+    fetch(
+      `https://webshop-rest-api-main-production.up.railway.app/baskets/${customer.customerId}`
+    )
       .then((response) => response.json())
       .then((data) => setProducts(data));
   }, [itemCount]);
@@ -184,9 +189,7 @@ export default function BasketItemContainer({
               <strong id="totalAmount">{totalAmount} DKK</strong>
             </li>
             <li className="buy-li">
-              <button
-                className="buy-btn btn BlackButton"
-                onClick={() => buyAll()}>
+              <button className="buy-btn btn" onClick={() => buyAll()}>
                 Buy
               </button>
             </li>

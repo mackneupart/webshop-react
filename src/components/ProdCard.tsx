@@ -49,16 +49,21 @@ export default function ProdCard({
   return (
     <Fragment>
       <div className="card" id={prodId}>
-        <img
-          className="product-card-img"
-          src={prodImg}
-          alt={prodName + " image"}
-        />
+        <Link className="" to={`/Product/${prodId}`}>
+          <img
+            className="product-card-img"
+            src={prodImg}
+            alt={prodName + " image"}
+          />
+        </Link>
+
         <div className="card-body">
           <div className="text-center">
-            <h5 className="fw-bolder" id="productName">
-              {prodName}
-            </h5>
+            <Link to={`/Product/${prodId}`}>
+              <h5 className="fw-bolder" id="productName">
+                {prodName}
+              </h5>
+            </Link>
             <span>
               <span id="productPrice">{prodPrice}</span> DKK
             </span>
@@ -66,16 +71,11 @@ export default function ProdCard({
         </div>
         <div className="card-footer p-4 pt-0 border-top-0 bg-transparent align-self-center">
           <div className="text-center custom-inline">
-            <button
-              id="AddProduct"
-              className="btn YellowButton"
-              type="submit"
-              onClick={buyProduct}>
-              <i className=""></i> Buy now
-            </button>
-            <Link className="btn BlackButton" to={`/Product/${prodId}`}>
-              See product
-            </Link>
+            <img
+              src="../../assets/images/add-button.png"
+              className="basket-img"
+              onClick={buyProduct}
+            />
           </div>
         </div>
       </div>
